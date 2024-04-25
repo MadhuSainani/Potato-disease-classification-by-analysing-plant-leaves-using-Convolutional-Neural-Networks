@@ -41,7 +41,7 @@ The proposed model architecture has been tested with different batch sizes (16, 
 - Dropout rate: 0.1
 - Activation Function: ReLU
 - Activation Function at Output Layer: SoftMax
-## Result:
+
 
 
 
