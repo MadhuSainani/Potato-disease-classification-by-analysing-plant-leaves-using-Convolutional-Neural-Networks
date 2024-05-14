@@ -18,17 +18,9 @@ The dataset proposed to meet objectives of this work is the Plant Village datase
 - Training Environment: Google Collaboratory’s GPU 
 - Loss Function: Sparse Categorical Cross Entropy
 - Optimizer: Adam (Adaptive Moment Estimation)
-## Proposed Hyperparameters:
-The proposed model architecture has been tested with different batch sizes (16, 32, and 64), learning rates (0.01, 0.001, and 0.0001), and dropout rates (0.1, 0.2, 0.3, 0.4, and 0.5). Below are the recommended hyperparameters for this model:
-- Number of Epochs: 200
-- Batch Size: 16
-- Learning Rate - 0.001
-- Number of Training Images: 1728
-- Number of Validation Images: 208
-- Number of Test Images: 224
-- Dropout rate: 0.1
-- Activation Function: ReLU
-- Activation Function at Output Layer: SoftMax
+## Result and Analysis:
+The proposed CNN model is trained on Potato leaf dataset from benchmark Plant Village dataset. In the proposed experiment, Sparse categorical cross entropy is utilized as a loss function to estimate loss value between true and predicted classes. Adam (Adaptive Moment Estimation) algorithm is utilized for gradient optimization with default exponential decay rates of β1 = 0.9 for first moment and β2 = 0.999 for second moment. Adam optimizer offers adaptive learning by computing the ratio of first moment and second moment, which allows model to adapt learning rate for individual parameters. Although, the Adam optimizer has integrated adaptive learning rate system. In this work, various learning rates and batch size are experimented to visualize their effects on disease classification task. 
+The model architecture experimented for this work includes 3 convolutional layers, 3 max pooling layer, dropout rate of 0.4, one dense layer with 64 neurons, and SoftMax output layer. 
 
 
 
