@@ -26,15 +26,15 @@ The model architecture experimented for this work includes 3 convolutional layer
 
 ![Training of proposed CNN model on various batches and learning rates](https://github.com/MadhuSainani/Potato-disease-classification-by-analysing-plant-leaves-using-Convolutional-Neural-Networks/blob/main/Insights/Training%20of%20proposed%20CNN%20model%20on%20various%20batches%20and%20learning%20rates.png)
 
-![Graphical representation of validation accuracy at different batch size and learning rates](https://github.com/MadhuSainani/Potato-disease-classification-by-analysing-plant-leaves-using-Convolutional-Neural-Networks/blob/main/Batch%20Size%20and%20Learning%20rate.png)
+![Graphical representation of validation accuracy at different batch size and learning rates](https://github.com/MadhuSainani/Potato-disease-classification-by-analysing-plant-leaves-using-Convolutional-Neural-Networks/blob/main/Insights/Batch%20Size%20and%20Learning%20rate.png)
 
 - **Influence of Dropout Rate:**
 Similar to traditional ensemble modelling, dropout simulates ensemble modelling by training sub-models which are derived from models susceptible to overfitting. By iteratively training different sub-models by dropping random neurons, the model does not rely on same specific neurons for prediction and model becomes more reliable and robust. In this experiment, the proposed model is experimented with various dropout rates with suitable batch size of 16 and 0.001 learning rate. The dropout rates experimented for this work are 0.1, 0.2, 0.3, 0.4, and 0.5. For each dropout rate, the model is trained for 200 epochs on Google’s NVIDIA supercomputer.
 Each model is evaluated on test data on AMD Athlon Silver 3050U with Radeon Graphics, 64-bit operating system, 12 GB RAM device. Below Table shows average test accuracy, macro-average precision, macro-average recall, and macro-average f1-score for all three classes. The highest average test accuracy of 99.11% is achieved by model with dropout rate 0.1. Additionally, dropout rate 0.1 has achieved highest precision, recall, and f1-score of 98%, 99.33%, and 98.66% respectively.
 
-![Performance of proposed model on test data at different dropout rates](https://github.com/MadhuSainani/Potato-disease-classification-by-analysing-plant-leaves-using-Convolutional-Neural-Networks/blob/main/Performance%20of%20proposed%20model%20on%20test%20data%20at%20different%20dropout%20rates.png)
+![Performance of proposed model on test data at different dropout rates](https://github.com/MadhuSainani/Potato-disease-classification-by-analysing-plant-leaves-using-Convolutional-Neural-Networks/blob/main/Insights/Performance%20of%20proposed%20model%20on%20test%20data%20at%20different%20dropout%20rates.png)
 
-![Graphical representation of performance measures at different dropouts](https://github.com/MadhuSainani/Potato-disease-classification-by-analysing-plant-leaves-using-Convolutional-Neural-Networks/blob/main/Drop%20Rate.png)
+![Graphical representation of performance measures at different dropouts](https://github.com/MadhuSainani/Potato-disease-classification-by-analysing-plant-leaves-using-Convolutional-Neural-Networks/blob/main/Insights/Drop%20Rate.png)
 After experimenting with various batch sizes, learning rates, and dropout rates using the proposed architecture, the resulting hyperparameters are as follows:
 - Number of Epochs: 200
 - Batch Size: 16
