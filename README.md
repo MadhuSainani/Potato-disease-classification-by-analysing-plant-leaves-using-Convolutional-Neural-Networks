@@ -35,6 +35,8 @@ Each model is evaluated on test data on AMD Athlon Silver 3050U with Radeon Grap
 ![Performance of proposed model on test data at different dropout rates](https://github.com/MadhuSainani/Potato-disease-classification-by-analysing-plant-leaves-using-Convolutional-Neural-Networks/blob/main/Insights/Performance%20of%20proposed%20model%20on%20test%20data%20at%20different%20dropout%20rates.png)
 
 ![Graphical representation of performance measures at different dropouts](https://github.com/MadhuSainani/Potato-disease-classification-by-analysing-plant-leaves-using-Convolutional-Neural-Networks/blob/main/Insights/Drop%20Rate.png)
+
+
 After experimenting with various batch sizes, learning rates, and dropout rates using the proposed architecture, the resulting hyperparameters are as follows:
 - Number of Epochs: 200
 - Batch Size: 16
