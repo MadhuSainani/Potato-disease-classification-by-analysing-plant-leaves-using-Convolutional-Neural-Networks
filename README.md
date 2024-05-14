@@ -28,6 +28,11 @@ The model architecture experimented for this work includes 3 convolutional layer
 
 ![Graphical representation of validation accuracy at different batch size and learning rates](https://github.com/MadhuSainani/Potato-disease-classification-by-analysing-plant-leaves-using-Convolutional-Neural-Networks/blob/main/Batch%20Size%20and%20Learning%20rate.png)
 
+- **Influence of Dropout Rate:**
+Similar to traditional ensemble modelling, dropout simulates ensemble modelling by training sub-models which are derived from models susceptible to overfitting. By iteratively training different sub-models by dropping random neurons, the model does not rely on same specific neurons for prediction and model becomes more reliable and robust. In this experiment, the proposed model is experimented with various dropout rates with suitable batch size of 16 and 0.001 learning rate. The dropout rates experimented for this work are 0.1, 0.2, 0.3, 0.4, and 0.5. For each dropout rate, the model is trained for 200 epochs on Google’s NVIDIA supercomputer.
+Each model is evaluated on test data on AMD Athlon Silver 3050U with Radeon Graphics, 64-bit operating system, 12 GB RAM device. Below Table shows average test accuracy, macro-average precision, macro-average recall, and macro-average f1-score for all three classes. The highest average test accuracy of 99.11% is achieved by model with dropout rate 0.1. Additionally, dropout rate 0.1 has achieved highest precision, recall, and f1-score of 98%, 99.33%, and 98.66% respectively.
+
+
 
 
 
