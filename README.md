@@ -11,20 +11,8 @@ The dataset proposed to meet objectives of this work is the Plant Village datase
 - **Data Preparation:** In dataset preparation, the images will be divided into train, test, and validation split. 80% of the data will be allocated as train split, which will be used to train the model and 10% of the data will be allocated as test split, which will be used to evaluate the model. 10% of the images will be allocated as validation split, which will be utilized to assess the model’s performance during training by supplying it to the model after each epoch.
 - **Data Augmentation:** Data augmentation will make the dataset more robust and diverse by introducing slight variations. By this it will improve the generalizability of the model, prevents overfitting, and balance class distribution. The dataset proposed for this work includes 1000 images for Early blight, 1000 images for Late blight, and 152 images for healthy class. However, there are only 152 images for healthy class which might lead to biased result due to class imbalance. The proposed solution for class imbalance is Data augmentation pipeline, which augment the training images on-the-fly rather than increasing the number of images physically. To increase number of training data size, five run time data transformations are proposed: Random flip, Random rotation by 0.2 factor, Random zoom by 0.2 factor, Random translation by 0.2 factor, and Random contrast by 0.2 factor.
 ### Proposed CNN Model's Architecture:
-- Input Image: (16×256×256×3)
-- Convolutional Block 1:
-  - Conv2d + ReLU: 16 filters, 3×3 filter size, output shape (16×254×254×16), parameters: 448
-  - MaxPooling2d: 2×2, output shape (16×127×127×16)
-- Convolutional Block 2:
-  - Conv2d + ReLU: 32 filters, 3×3 filter size, output shape (16×125×125×32), parameters: 4640
-  - MaxPooling2d: 2×2, output shape (16×62×62×32)
-- Convolutional Block 3:
-  - Conv2d + ReLU: 64 filters, 3×3 filter size, output shape (16×60×60×64), parameters: 18,496
-  - MaxPooling2d: 2×2, output shape (16×30×30×64)
-- Classifier Block:
-  - Global Average Pooling2d (GAP), output shape (16×64)
-  - Dense Layer + ReLU, output shape (16×64), parameters: 4160
-  - Dense Layer + SoftMax, output shape (16×3), parameters: 195
+![Proposed architecture of CNN model for disease classification](https://github.com/MadhuSainani/Potato-disease-classification-by-analysing-plant-leaves-using-Convolutional-Neural-Networks/blob/main/Proposed%20Architecture%20of%20CNN%20Model.png)
+
 ## Experimental Setup:
 - Framework: TensorFlow’s Keras Open Source Library 
 - Training Environment: Google Collaboratory’s GPU 
