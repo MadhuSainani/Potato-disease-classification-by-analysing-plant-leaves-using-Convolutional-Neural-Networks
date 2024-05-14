@@ -24,7 +24,7 @@ The proposed CNN model is trained on Potato leaf dataset from benchmark Plant Vi
 The model architecture experimented for this work includes 3 convolutional layers, 3 max pooling layer, dropout rate of 0.4, one dense layer with 64 neurons, and SoftMax output layer. Below Table showing the training accuracy and validation accuracy when training the proposed deep CNN model on mini batch size of 16, 32, and 48 with 0.0001, 0.001, and 0.01 learning rates.
 
 
-![Training of proposed CNN model on various batches and learning rates](https://github.com/MadhuSainani/Potato-disease-classification-by-analysing-plant-leaves-using-Convolutional-Neural-Networks/blob/main/Training%20of%20proposed%20CNN%20model%20on%20various%20batches%20and%20learning%20rates.png)
+![Training of proposed CNN model on various batches and learning rates](https://github.com/MadhuSainani/Potato-disease-classification-by-analysing-plant-leaves-using-Convolutional-Neural-Networks/blob/main/Insights/Training%20of%20proposed%20CNN%20model%20on%20various%20batches%20and%20learning%20rates.png)
 
 ![Graphical representation of validation accuracy at different batch size and learning rates](https://github.com/MadhuSainani/Potato-disease-classification-by-analysing-plant-leaves-using-Convolutional-Neural-Networks/blob/main/Batch%20Size%20and%20Learning%20rate.png)
 
