@@ -20,7 +20,11 @@ The dataset proposed to meet objectives of this work is the Plant Village datase
 - Optimizer: Adam (Adaptive Moment Estimation)
 ## Result and Analysis:
 The proposed CNN model is trained on Potato leaf dataset from benchmark Plant Village dataset. In the proposed experiment, Sparse categorical cross entropy is utilized as a loss function to estimate loss value between true and predicted classes. Adam (Adaptive Moment Estimation) algorithm is utilized for gradient optimization with default exponential decay rates of β1 = 0.9 for first moment and β2 = 0.999 for second moment. Adam optimizer offers adaptive learning by computing the ratio of first moment and second moment, which allows model to adapt learning rate for individual parameters. Although, the Adam optimizer has integrated adaptive learning rate system. In this work, various learning rates and batch size are experimented to visualize their effects on disease classification task. 
-The model architecture experimented for this work includes 3 convolutional layers, 3 max pooling layer, dropout rate of 0.4, one dense layer with 64 neurons, and SoftMax output layer. 
+The model architecture experimented for this work includes 3 convolutional layers, 3 max pooling layer, dropout rate of 0.4, one dense layer with 64 neurons, and SoftMax output layer. Below Table showing the training accuracy and validation accuracy when training the proposed deep CNN model on mini batch size of 16, 32, and 48 with 0.0001, 0.001, and 0.01 learning rates.
+![Training of proposed CNN model on various batches and learning rates](https://github.com/MadhuSainani/Potato-disease-classification-by-analysing-plant-leaves-using-Convolutional-Neural-Networks/blob/main/Training%20of%20proposed%20CNN%20model%20on%20various%20batches%20and%20learning%20rates.png)
+
+![Graphical representation of validation accuracy at different batch size and learning rates](https://github.com/MadhuSainani/Potato-disease-classification-by-analysing-plant-leaves-using-Convolutional-Neural-Networks/blob/main/Batch%20Size%20and%20Learning%20rate.png)
+
 
 
 
