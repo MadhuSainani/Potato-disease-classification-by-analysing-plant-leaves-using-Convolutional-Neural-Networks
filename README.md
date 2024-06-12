@@ -1,53 +1,17 @@
 # Potato Disease Classification by Analysing Plant Leaves using Convolutional Neural Networks
 ## Problem Statement:
-Plant diseases reduce the crop yield that can results in higher food costs and shortage of food. The staple food source potatoes are essential food crop due to its high nutritional value and global consumption. However, potato crops can severely damage by plant pathogens. Early Blight and Late Blight are two most common fungal diseases in potato crops. The conventional methods to identify diseases in potato crops are costly and cumbersome. An agriculture expert person is required to execute these conventional techniques. To manage diseases, farmers require new techniques that should be less expensive, fast, reliable, and highly accurate. Such techniques are considered as highly practical because they would assist farmers in efficient management of crops by applying treatments more efficiently, which can maintain overall economic value of potato crop. Additionally, it enables targeted use of fungicides where it is necessary, reduces the input costs of disease management. Recently, many researchers are using deep learning techniques into disease classification of crops because they facilitate automatic feature extraction from visible range images due to its multi-layer architecture, which contains convolutional layers that automatically acquire spatial hierarchies of features from images (e.g., from edges to shapes of object). Additionally, there exist several pre-trained transfer learning models such as AlexNet, ResNets, VGGNet, RFCN, R-CNN, SSD, YOLO, MobileNets, EfficientNets etc., which can be optimized or fine-tuned for disease identification in crops. However, these models are not specially designed for a particular objective, as they are trained on large dataset called "ImageNet" that has millions of labeled images across thousands of categories, which might generate possibilities for precision error. Additionally, pre-trained models have complex multi-layer architectures, which can lead to high computational burden and making it challenging to deploy in resource-constraint devices. Additionally, complex pre-trained models have less interpretability, which might create difficulty for researchers to understand essential contributing features of disease and decision-making.
+Plant diseases, particularly Early Blight and Late Blight can significantly reduce potato crop yields, leading to higher food costs and shortages. Traditional disease identification methods are costly and require expert intervention. Farmers need more affordable, fast, reliable, and accurate techniques for efficient disease management. Recently, deep learning techniques (CNN) have been used for crop disease classification due to their ability to automatically extract features from images. Pre-trained models like InceptionV3, ResNets, and VGGNet can be fine-tuned for this purpose. However, these models are not specifically designed for disease identification and can lead to precision errors and limited interpretability. Additionally, pre-trained models have complex multi-layer architectures, which can lead to high computational burden and making it challenging to deploy in resource-constraint devices. 
 ## Aim:
 The motivation of this work is to build a customized deep CNN model specifically designed to efficiently classify diseases in potato leaf plants with minimum number of layers, optimized hyper parameters, high accuracy, and less computational burden. The research aims to strike a balance between detection accuracy and computational efficiency, and build a robust and reliable tool to help farmers in managing potato crops.   
-## Proposed Methodoly:
-### Proposed Dataset:
-The dataset proposed to meet objectives of this work is the Plant Village dataset, which is an open-source publicly available benchmark agriculture dataset. This dataset includes 1000 images for Potato Early Blight, 1000 images for Potato Late Blight, and 152 images for Potato Healthy.
-### Data Pre-Processing:
-- **Image Resizing and Rescaling:** Images are resized to height and width of 256×256. Additionally, the original range of pixel values of images are rescaled to the normalized value of [0,1] by the scaling factor of 1.0/255.
-- **Data Preparation:** In dataset preparation, the images will be divided into train, test, and validation split. 80% of the data will be allocated as train split, which will be used to train the model and 10% of the data will be allocated as test split, which will be used to evaluate the model. 10% of the images will be allocated as validation split, which will be utilized to assess the model’s performance during training by supplying it to the model after each epoch.
-- **Data Augmentation:** Data augmentation will make the dataset more robust and diverse by introducing slight variations. By this it will improve the generalizability of the model, prevents overfitting, and balance class distribution. The dataset proposed for this work includes 1000 images for Early blight, 1000 images for Late blight, and 152 images for healthy class. However, there are only 152 images for healthy class which might lead to biased result due to class imbalance. The proposed solution for class imbalance is Data augmentation pipeline, which augment the training images on-the-fly rather than increasing the number of images physically. To increase number of training data size, five run time data transformations are proposed: Random flip, Random rotation by 0.2 factor, Random zoom by 0.2 factor, Random translation by 0.2 factor, and Random contrast by 0.2 factor.
-### Proposed CNN Model's Architecture:
-![Proposed architecture of CNN model for disease classification](https://github.com/MadhuSainani/Potato-disease-classification-by-analysing-plant-leaves-using-Convolutional-Neural-Networks/blob/main/Insights/Proposed%20Architecture%20of%20CNN%20Model.png)
+## Key Contribution:
+- A novel lightweight deep CNN model has been developed for detecting Early Blight and Late Blight in potato crops. This customized deep CNN, with 3 convolutional layers, is specifically designed for disease detection in potato leaves. Additionally, the model has been tuned with various batch sizes (16,32,64) and learning rates (0.0001, 0.001, 0.01) to stabilize its performance.
+- Multiple fully-connected layers and flatten layer have been replaced by Global Average Pooling (GAP) layer, resulting in significant reduction in number of trainable parameters and computational burden.
+- Dropout regularization technique is employed to stimulate ensemble modelling. The model is experimented with various dropout rates (e.g., 0.1, 0.2, 0.3, 0.4, 0.5) to prevent overfitting.
+- The model has obtained balanced test accuracy of 99.11% and f1-score of 99% on unseen data. 
+- The model has been compared with pre-trained models InceptionV3, MobileNetV2, MobileNet, ResNet50. The proposed model has outperforms InceptionV3 by 5.6%, surpasses ResNet50 by 35.4%, and matches the accuracy of MobileNet and MobileNetV2.
+- Enhanced computational efficiency by reducing prediction time to 1 second and model size to 109.14 KB, significantly outperforming larger models such as InceptionV3 (16 seconds, 83.19 MB) and ResNet50 (27 seconds, 90.00 MB).
+- Optimized for resource-constrained devices with a model size of only 109.14 KB, making it much smaller and more deployable than MobileNet (12.33 MB) and MobileNetV2 (8.63 MB).
 
-## Experimental Setup:
-- Framework: TensorFlow’s Keras Open Source Library 
-- Training Environment: Google Collaboratory’s GPU 
-- Loss Function: Sparse Categorical Cross Entropy
-- Optimizer: Adam (Adaptive Moment Estimation)
-## Result and Analysis:
-- **Impact of Batch Size and Learning Rate:**
-The proposed CNN model is trained on Potato leaf dataset from benchmark Plant Village dataset. In the proposed experiment, Sparse categorical cross entropy is utilized as a loss function to estimate loss value between true and predicted classes. Adam (Adaptive Moment Estimation) algorithm is utilized for gradient optimization with default exponential decay rates of β1 = 0.9 for first moment and β2 = 0.999 for second moment. Adam optimizer offers adaptive learning by computing the ratio of first moment and second moment, which allows model to adapt learning rate for individual parameters. Although, the Adam optimizer has integrated adaptive learning rate system. In this work, various learning rates and batch size are experimented to visualize their effects on disease classification task. 
-The model architecture experimented for this work includes 3 convolutional layers, 3 max pooling layer, dropout rate of 0.4, one dense layer with 64 neurons, and SoftMax output layer. Below Table showing the training accuracy and validation accuracy when training the proposed deep CNN model on mini batch size of 16, 32, and 48 with 0.0001, 0.001, and 0.01 learning rates.
-
-
-![Training of proposed CNN model on various batches and learning rates](https://github.com/MadhuSainani/Potato-disease-classification-by-analysing-plant-leaves-using-Convolutional-Neural-Networks/blob/main/Insights/Training%20of%20proposed%20CNN%20model%20on%20various%20batches%20and%20learning%20rates.png)
-
-![Graphical representation of validation accuracy at different batch size and learning rates](https://github.com/MadhuSainani/Potato-disease-classification-by-analysing-plant-leaves-using-Convolutional-Neural-Networks/blob/main/Insights/Batch%20Size%20and%20Learning%20rate.png)
-
-- **Influence of Dropout Rate:**
-Similar to traditional ensemble modelling, dropout simulates ensemble modelling by training sub-models which are derived from models susceptible to overfitting. By iteratively training different sub-models by dropping random neurons, the model does not rely on same specific neurons for prediction and model becomes more reliable and robust. In this experiment, the proposed model is experimented with various dropout rates with suitable batch size of 16 and 0.001 learning rate. The dropout rates experimented for this work are 0.1, 0.2, 0.3, 0.4, and 0.5. For each dropout rate, the model is trained for 200 epochs on Google’s NVIDIA supercomputer.
-Each model is evaluated on test data on AMD Athlon Silver 3050U with Radeon Graphics, 64-bit operating system, 12 GB RAM device. Below Table shows average test accuracy, macro-average precision, macro-average recall, and macro-average f1-score for all three classes. The highest average test accuracy of 99.11% is achieved by model with dropout rate 0.1. Additionally, dropout rate 0.1 has achieved highest precision, recall, and f1-score of 98%, 99.33%, and 98.66% respectively.
-
-![Performance of proposed model on test data at different dropout rates](https://github.com/MadhuSainani/Potato-disease-classification-by-analysing-plant-leaves-using-Convolutional-Neural-Networks/blob/main/Insights/Performance%20of%20proposed%20model%20on%20test%20data%20at%20different%20dropout%20rates.png)
-
-![Graphical representation of performance measures at different dropouts](https://github.com/MadhuSainani/Potato-disease-classification-by-analysing-plant-leaves-using-Convolutional-Neural-Networks/blob/main/Insights/Drop%20Rate.png)
-
-
-After experimenting with various batch sizes, learning rates, and dropout rates using the proposed architecture, the resulting hyperparameters are as follows:
-- Number of Epochs: 200
-- Batch Size: 16
-- Optimizer: Adam
-- Learning Rate: 0.001
-- Number of training images: 1728
-- Number of validation images: 208
-- Number of test images: 224
-- Dropout rate: 0.1
-- Activation function: ReLU
-- Activation function at output layer: SoftMax
 
 
 
