@@ -1,4 +1,7 @@
 # Potato Disease Classification by Analysing Plant Leaves using Convolutional Neural Networks
+As part of disseration for MSc at Northumbria University, I have worked on this project. Please explore my presentation and code files to delve deeper into the proposed methodolgy, results, analysis, and future recommendations.
+Presentation Link: https://docs.google.com/presentation/d/1DkCnJGNQ_zmSacotN8w85mcsu8AovZ-4/edit?usp=sharing&ouid=108050464650727057070&rtpof=true&sd=true
+
 ## Problem Statement:
 Plant diseases, particularly Early Blight and Late Blight can significantly reduce potato crop yields, leading to higher food costs and shortages. Traditional disease identification methods are costly and require expert intervention. Farmers need more affordable, fast, reliable, and accurate techniques for efficient disease management. Recently, deep learning techniques (CNN) have been used for crop disease classification due to their ability to automatically extract features from images. Pre-trained models like InceptionV3, ResNets, and VGGNet can be fine-tuned for this purpose. However, these models are not specifically designed for disease identification and can lead to precision errors and limited interpretability. Additionally, pre-trained models have complex multi-layer architectures, which can lead to high computational burden and making it challenging to deploy in resource-constraint devices. 
 ## Aim:
